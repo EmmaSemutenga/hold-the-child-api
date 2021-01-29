@@ -14,7 +14,7 @@ class Publication(models.Model):
     publication_date = models.DateField(blank=True, null=True)
     name_of_publisher = models.CharField(max_length=100, blank=True, null=True)
     author = models.CharField(max_length=100, blank=True, null=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     attachment = models.FileField(upload_to='uploads/%Y/%m/%d/', blank=True, null=True)
 
     def __str__(self):

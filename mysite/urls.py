@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from operations import urls as operations_urls
 from programs import urls as programs_urls
+from projects import urls as projects_urls
+from publications import urls as publications_urls
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -39,6 +41,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('operations/', include(operations_urls.router.urls)),
     path('programs/', include(programs_urls.router.urls)),
+    path('projects/', include(projects_urls.router.urls)),
+    path('publications/', include(publications_urls.router.urls)),
     path('admin/', admin.site.urls),
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

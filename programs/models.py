@@ -7,7 +7,7 @@ class Program(models.Model):
     goal = models.CharField(max_length=100, blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     strategic_plan = models.FileField(upload_to='uploads/%Y/%m/%d/', blank=True, null=True)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class Program(models.Model):
 class ProgrammaticApproach(models.Model):
     program = models.ForeignKey(Program, on_delete = models.CASCADE, blank=True, null=True)
     theme_title = models.CharField(max_length=100, blank=True, null=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.theme_title
@@ -38,7 +38,7 @@ class Indicator(models.Model):
 class ManagementApproach(models.Model):
     program = models.ForeignKey(Program, on_delete = models.CASCADE, blank=True, null=True)
     domain_title = models.CharField(max_length=100, blank=True, null=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.domain_title

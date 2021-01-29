@@ -59,7 +59,7 @@ class Travel(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True, null=True)
     travel_role = models.CharField(max_length=100, blank=True, null=True)
     travel_type = models.CharField(max_length=100, blank=True, null=True)
-    reason = models.TextField()
+    reason = models.TextField(blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
 
