@@ -20,5 +20,5 @@ class Publication(models.Model):
     def __str__(self):
         return self.title
 
-Accounts: User, profile, Kin, profession, bank, contract, attachment
-HR: Perfomance, Timesheet, Tracking, leave, case
+# Accounts: User, profile, Kin, profession, bank, contract, attachment
+# HR: Perfomance, Timesheet, Tracking, leave, case
