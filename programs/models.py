@@ -15,7 +15,7 @@ class Program(models.Model):
 
 #on same form
 class ProgrammaticApproach(models.Model):
-    program = models.ForeignKey(Program, on_delete = models.CASCADE, blank=True, null=True)
+    program = models.OneToOneField(Program, on_delete = models.CASCADE, blank=True, null=True)
     theme_title = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
@@ -36,7 +36,7 @@ class Indicator(models.Model):
 
 #on same form
 class ManagementApproach(models.Model):
-    program = models.ForeignKey(Program, on_delete = models.CASCADE, blank=True, null=True)
+    program = models.OneToOneField(Program, on_delete = models.CASCADE, blank=True, null=True)
     domain_title = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
